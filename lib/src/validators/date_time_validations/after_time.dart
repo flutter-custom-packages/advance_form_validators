@@ -27,7 +27,8 @@ class AfterTime extends BaseValidator {
 
       if (parsedTimeInMinutes <= afterTimeInMinutes) {
         return super.onError?.call(value) ??
-            message.replaceAll('{afterTime}', '${_afterTime.hour}:${_afterTime.minute}');
+            message.replaceAll(
+                '{afterTime}', '${_afterTime.hour}:${_afterTime.minute}');
       }
     } catch (e) {
       return ErrorMessage.timeGeneral.message;

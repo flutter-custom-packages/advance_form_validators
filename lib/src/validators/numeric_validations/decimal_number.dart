@@ -22,10 +22,12 @@ class DecimalNumber extends BaseValidator {
     if (!Regex.decimal.expression.hasMatch(value)) {
       return super.onError?.call(value) ?? ErrorMessage.decimal.message;
     }
-    final regex = Regex.decimalValue.regex.replaceAll('{decimalValue}', _decimalValue.toString());
+    final regex = Regex.decimalValue.regex
+        .replaceAll('{decimalValue}', _decimalValue.toString());
     if (!RegExp(regex).hasMatch(value)) {
       return super.onError?.call(value) ??
-          ErrorMessage.decimalValue.message.replaceAll('{decimal}', _decimalValue.toString());
+          ErrorMessage.decimalValue.message
+              .replaceAll('{decimal}', _decimalValue.toString());
     }
     return null;
   }

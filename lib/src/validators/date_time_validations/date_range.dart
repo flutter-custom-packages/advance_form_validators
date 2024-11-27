@@ -25,9 +25,10 @@ class DateRange extends BaseValidator {
       if (parsedDate.isBefore(_startDate) || parsedDate.isAfter(_endDate)) {
         return super.onError?.call(value) ??
             message
-                .replaceAll(
-                    '{startDate}', '${_startDate.year}-${_startDate.month}-${_startDate.day}')
-                .replaceAll('{endDate}', '${_endDate.year}-${_endDate.month}-${_endDate.day}');
+                .replaceAll('{startDate}',
+                    '${_startDate.year}-${_startDate.month}-${_startDate.day}')
+                .replaceAll('{endDate}',
+                    '${_endDate.year}-${_endDate.month}-${_endDate.day}');
       }
     } catch (e) {
       return ErrorMessage.dateGeneral.message;

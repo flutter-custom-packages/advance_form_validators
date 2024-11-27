@@ -17,7 +17,8 @@ class MinLength extends BaseValidator {
   String? validate(String? value) {
     if (value == null || value.isEmpty) return null;
     if (value.length < _minLength) {
-      return super.onError?.call(value) ?? message.replaceAll('{min}', _minLength.toString());
+      return super.onError?.call(value) ??
+          message.replaceAll('{min}', _minLength.toString());
     }
     return null;
   }

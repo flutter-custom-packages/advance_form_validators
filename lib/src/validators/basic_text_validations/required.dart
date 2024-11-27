@@ -1,7 +1,6 @@
 import 'package:advance_form_validators/src/validators/base_validator.dart';
 import 'package:advance_form_validators/src/constants/constants.dart';
 
-
 class Required extends BaseValidator {
   Required({
     String? message,

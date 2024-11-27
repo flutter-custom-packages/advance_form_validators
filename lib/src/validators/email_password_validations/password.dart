@@ -28,12 +28,15 @@ class Password extends BaseValidator {
     if (value == null || value.isEmpty) return null;
     if (value.length < _minimumPasswordLength) {
       return super.onError?.call(value) ??
-          ErrorMessage.minimumLenght.message.replaceAll('{min}', _minimumPasswordLength.toString());
+          ErrorMessage.minimumLenght.message
+              .replaceAll('{min}', _minimumPasswordLength.toString());
     }
-    if (_isUpperCaseRequired && !value.contains(Regex.containsUppercase.expression)) {
+    if (_isUpperCaseRequired &&
+        !value.contains(Regex.containsUppercase.expression)) {
       return super.onError?.call(value) ?? ErrorMessage.uppercase.message;
     }
-    if (_isLowerCaseRequired && !value.contains(Regex.containsLowercase.expression)) {
+    if (_isLowerCaseRequired &&
+        !value.contains(Regex.containsLowercase.expression)) {
       return super.onError?.call(value) ?? ErrorMessage.lowercase.message;
     }
     if (_isNumberRequired && !value.contains(Regex.containsNumber.expression)) {

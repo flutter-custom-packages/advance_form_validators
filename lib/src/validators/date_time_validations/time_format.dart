@@ -20,7 +20,8 @@ class TimeFormat extends BaseValidator {
       final timeFormat = DateFormat(_format);
       timeFormat.parseStrict(value);
     } catch (e) {
-      return super.onError?.call(value) ?? message.replaceAll('{formatType}', _format);
+      return super.onError?.call(value) ??
+          message.replaceAll('{formatType}', _format);
     }
 
     return null;

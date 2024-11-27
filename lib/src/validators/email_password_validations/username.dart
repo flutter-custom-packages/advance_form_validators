@@ -19,7 +19,8 @@ class Username extends BaseValidator {
     if (value == null || value.isEmpty) return null;
     if (value.length < _minLength) {
       return super.onError?.call(value) ??
-          ErrorMessage.minimumLenght.message.replaceAll('{min}', _minLength.toString());
+          ErrorMessage.minimumLenght.message
+              .replaceAll('{min}', _minLength.toString());
     }
     if (!Regex.username.expression.hasMatch(value)) {
       return super.onError?.call(value) ?? message;

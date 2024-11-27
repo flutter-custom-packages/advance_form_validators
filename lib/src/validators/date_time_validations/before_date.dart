@@ -22,8 +22,8 @@ class BeforeDate extends BaseValidator {
       final parsedDate = DateTime.parse(value);
       if (parsedDate.isAfter(_beforeDate)) {
         return super.onError?.call(value) ??
-            message.replaceAll(
-                '{beforeDate}', '${_beforeDate.year}-${_beforeDate.month}-${_beforeDate.day}');
+            message.replaceAll('{beforeDate}',
+                '${_beforeDate.year}-${_beforeDate.month}-${_beforeDate.day}');
       }
     } catch (e) {
       return ErrorMessage.dateGeneral.message;

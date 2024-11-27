@@ -1,5 +1,6 @@
 import 'package:advance_form_validators/src/validators/base_validator.dart';
 import 'package:advance_form_validators/src/constants/constants.dart';
+
 class MinNumber extends BaseValidator {
   final int _minValue;
 
@@ -19,7 +20,8 @@ class MinNumber extends BaseValidator {
 
     final numValue = double.tryParse(value);
     if (numValue == null || numValue < _minValue) {
-      return super.onError?.call(value) ?? message.replaceAll('{min}', _minValue.toString());
+      return super.onError?.call(value) ??
+          message.replaceAll('{min}', _minValue.toString());
     }
     return null;
   }

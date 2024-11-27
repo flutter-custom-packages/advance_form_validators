@@ -1,8 +1,6 @@
-
 import 'package:advance_form_validators/src/validators/base_validator.dart';
 import 'package:advance_form_validators/src/constants/constants.dart';
 import 'package:intl/intl.dart';
-
 
 class DateFormatter extends BaseValidator {
   final String _format;
@@ -22,7 +20,8 @@ class DateFormatter extends BaseValidator {
       final DateFormat dateFormat = DateFormat(_format);
       dateFormat.parseStrict(value);
     } catch (e) {
-      return super.onError?.call(value) ?? message.replaceAll('{formatType}', _format);
+      return super.onError?.call(value) ??
+          message.replaceAll('{formatType}', _format);
     }
 
     return null;

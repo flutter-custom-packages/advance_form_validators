@@ -18,7 +18,8 @@ class MaxNumber extends BaseValidator {
     if (value == null || value.isEmpty) return null;
     final numValue = double.tryParse(value);
     if (numValue == null || numValue > _maxValue) {
-      return super.onError?.call(value) ?? message.replaceAll('{max}', _maxValue.toString());
+      return super.onError?.call(value) ??
+          message.replaceAll('{max}', _maxValue.toString());
     }
     return null;
   }

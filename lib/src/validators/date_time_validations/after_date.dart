@@ -1,7 +1,6 @@
 import 'package:advance_form_validators/src/validators/base_validator.dart';
 import 'package:advance_form_validators/src/constants/constants.dart';
 
-
 class AfterDate extends BaseValidator {
   final DateTime _afterDate;
 
@@ -23,8 +22,8 @@ class AfterDate extends BaseValidator {
       final parsedDate = DateTime.parse(value);
       if (parsedDate.isBefore(_afterDate)) {
         return super.onError?.call(value) ??
-            message.replaceAll(
-                '{afterDate}', '${_afterDate.year}-${_afterDate.month}-${_afterDate.day}');
+            message.replaceAll('{afterDate}',
+                '${_afterDate.year}-${_afterDate.month}-${_afterDate.day}');
       }
     } catch (e) {
       return ErrorMessage.dateGeneral.message;
