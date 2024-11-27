@@ -1,0 +1,18 @@
+name: advance_form_validators
+description: >
+  A comprehensive Flutter package for form validation, offering built-in support for text, email, password, numeric, date, and advanced custom validations.
+version: 0.0.1
+homepage: https://github.com/flutter-custom-packages/advance_form_validators
+
+environment:
+  sdk: ">=2.18.0 <3.0.0" # Update Dart SDK constraint
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.20.0
+  flutter_lints: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
